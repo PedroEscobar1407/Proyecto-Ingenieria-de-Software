@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'img/favico.ico' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@500&family=Overpass:ital,wght@0,100..900;1,100..900&display=swap">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+</head>
+<body>
+<header>
+    <a href="{% url 'landing' %}" class="logo" style="margin-left: auto;">
+        <span class="material-symbols-outlined">
+            self_improvement
+        </span>
+        reflecta
+    </a>
+</header>
+<div class="ellipse"></div>
+<div class="container" style="margin: 150px"><!--container for the rest of the content in the page-->
+    <div class="login-container">
+        <div class="quote">
+            <h1 style="font-size: 40px">"Me pinto a mí misma, porque soy a quien mejor conozco."</h1>
+            <h3>- Frida Kahlo</h3>
+        </div>
+        <div style="text-align: left" class="login-form-container"><!--container for the login form-->
+            <form action="{% url 'login' %}" method="post"><!--the login form-->
+                {% csrf_token %}
+                {% for field in form %}
+                    <label>{{field.label}}</label>
+                    {{field}}
+                {% endfor %}
+                <div style="justify-content: center; display: flex;">
+                    <button class="login-button" type="submit">Iniciar Sesión</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

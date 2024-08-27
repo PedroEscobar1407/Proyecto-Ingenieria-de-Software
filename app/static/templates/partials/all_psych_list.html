@@ -1,0 +1,15 @@
+{% for psych in all_psych_list %}
+<div class="profile-info" id="psych-{{ psych.id }}">
+    <img src="{{ psych.photo.url }}" class="foto-psicologo">
+    <div class="profile-text">
+        <h2>{{ psych.name }}</h2>
+        <h3 class="specialty">{{ psych.specialty }}</h3>
+        <h3 class="email">{{ psych.user.email }}</h3>
+    </div>
+    {% if psych in psych_list %}
+        <button class="main-button panic-button" type="button" onclick="togglePsychologist({{ psych.id }}, 'unlink')" style="margin-left: auto; padding: 10px 30px">Eliminar</button>
+    {% else %}
+        <button class="main-button add-button" type="button" onclick="togglePsychologist({{ psych.id }}, 'link')" style="margin-left: auto; padding: 10px 30px">Agregar</button>
+    {% endif %}
+</div>
+{% endfor %}

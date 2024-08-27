@@ -1,0 +1,65 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reflecta</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'img/favico.ico' %}">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&family=Overpass:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+<body>
+<header>
+    <a href="" class="logo">
+        <span class="material-symbols-outlined">
+            self_improvement
+        </span>
+        reflecta
+    </a>
+    <a href="/login/" class="login-button">Iniciar sesión</a>
+</header>
+<div class="container">
+    <div class="ellipse"></div>
+    <div class="content">
+        <h1>Bienvenido a <span class="bold">reflecta</span></h1>
+        <h3>¿Qué tipo de usuario eres?</h3>
+        <div class="options">
+            <div class="option">
+                <h2>Paciente
+                    <span class="material-symbols-outlined">
+                        clinical_notes
+                    </span>
+                </h2>
+                <ul>
+                    <li>Escribe tu diario de vida</li>
+                    <li>Registra tus emociones</li>
+                    <li>Recibe ayuda profesional</li>
+                </ul>
+                <div class="register-container">
+                    <a class="login-button" href="/patient-register/">Comenzar</a>
+                </div>
+            </div>
+            <div class="option">
+                <h2>Psicólogo
+                    <span class="material-symbols-outlined">
+                       cognition
+                    </span>
+                </h2>
+                <ul>
+                    <li>Trata a múltiples pacientes</li>
+                    <li>Lee sus diarios de vida</li>
+                    <li>Monitorea sus emociones</li>
+                </ul>
+                <div class="register-container">
+                    <a class="login-button" href="/psych-register/">Aplicar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

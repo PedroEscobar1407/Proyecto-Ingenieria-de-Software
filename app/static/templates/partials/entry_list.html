@@ -1,0 +1,32 @@
+<!-- partials/entry_list.html -->
+{% if not diaries_list %}
+    <div class="entry" >
+        <div class="entry-top">
+            <div class="title-date">
+                <div class="entry-title" style="text-align: center">
+                    No hay entradas disponibles.
+                </div>
+            </div>
+        </div>
+    </div>
+{% endif %}
+{% for diary in diaries_list %}
+    <div class="entry">
+        <div class="entry-top">
+            <div class="title-date">
+                <div class="entry-title">
+                    {{ diary.title }}
+                </div>
+                <div class="entry-date">
+                    {{ diary.date }}
+                </div>
+            </div>
+            <div class="entry-emotion">
+                Emoción: {{ diary.emotion }}
+            </div>
+        </div>
+        <div class="entry-bottom">
+            {{ diary.text }}
+        </div>
+    </div>
+{% endfor %}
